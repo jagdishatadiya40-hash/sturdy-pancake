@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashcart</title>
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22Dashcart%22%2C%20%22short_name%22%3A%20%22Dashcart%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%23f8c630%22%2C%20%22theme_color%22%3A%20%22%23f8c630%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520xmlns%253D%2527http%253A//www.w3.org/2000/svg%2527%2520viewBox%253D%25270%25200%2520100%2520100%2527%253E%253Crect%2520width%253D%2527100%2527%2520height%253D%2527100%2527%2520rx%253D%252722%2527%2520fill%253D%2527%2523F8C630%2527/%253E%253Cline%2520x1%253D%252720%2527%2520y1%253D%252742%2527%2520x2%253D%252730%2527%2520y2%253D%252742%2527%2520stroke%253D%2527%2523111%2527%2520stroke-width%253D%25273%2527%2520stroke-linecap%253D%2527round%2527/%253E%253Cline%2520x1%253D%252717%2527%2520y1%253D%252750%2527%2520x2%253D%252731%2527%2520y2%253D%252750%2527%2520stroke%253D%2527%2523111%2527%2520stroke-width%253D%25273%2527%2520stroke-linecap%253D%2527round%2527/%253E%253Cline%2520x1%253D%252720%2527%2520y1%253D%252758%2527%2520x2%253D%252730%2527%2520y2%253D%252758%2527%2520stroke%253D%2527%2523111%2527%2520stroke-width%253D%25273%2527%2520stroke-linecap%253D%2527round%2527/%253E%253Cpath%2520d%253D%2527M38%252032%2520L48%252042%2527%2520stroke%253D%2527%2523111%2527%2520stroke-width%253D%25275%2527%2520stroke-linecap%253D%2527round%2527%2520fill%253D%2527none%2527/%253E%253Cpolygon%2520points%253D%252748%252C42%252078%252C42%252072%252C66%252054%252C66%2527%2520fill%253D%2527%2523111%2527/%253E%253Ccircle%2520cx%253D%252758%2527%2520cy%253D%252772%2527%2520r%253D%25275%2527%2520fill%253D%2527%2523111%2527/%253E%253Ccircle%2520cx%253D%252770%2527%2520cy%253D%252772%2527%2520r%253D%25275%2527%2520fill%253D%2527%2523111%2527/%253E%253C/svg%253E%22%2C%20%22sizes%22%3A%20%22any%22%2C%20%22type%22%3A%20%22image/svg%2Bxml%22%7D%5D%7D">
+<meta name="theme-color" content="#f8c630">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Dashcart">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Crect%20width%3D%27100%27%20height%3D%27100%27%20rx%3D%2722%27%20fill%3D%27%23F8C630%27/%3E%3Cline%20x1%3D%2720%27%20y1%3D%2742%27%20x2%3D%2730%27%20y2%3D%2742%27%20stroke%3D%27%23111%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27/%3E%3Cline%20x1%3D%2717%27%20y1%3D%2750%27%20x2%3D%2731%27%20y2%3D%2750%27%20stroke%3D%27%23111%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27/%3E%3Cline%20x1%3D%2720%27%20y1%3D%2758%27%20x2%3D%2730%27%20y2%3D%2758%27%20stroke%3D%27%23111%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27/%3E%3Cpath%20d%3D%27M38%2032%20L48%2042%27%20stroke%3D%27%23111%27%20stroke-width%3D%275%27%20stroke-linecap%3D%27round%27%20fill%3D%27none%27/%3E%3Cpolygon%20points%3D%2748%2C42%2078%2C42%2072%2C66%2054%2C66%27%20fill%3D%27%23111%27/%3E%3Ccircle%20cx%3D%2758%27%20cy%3D%2772%27%20r%3D%275%27%20fill%3D%27%23111%27/%3E%3Ccircle%20cx%3D%2770%27%20cy%3D%2772%27%20r%3D%275%27%20fill%3D%27%23111%27/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f8c630;--card:#fff;--text:#111111;--muted:#6b6355;--border:#e6e1cf;--accent:#128a4e;--tint:#e1f3e8;--on-accent:#fff;--danger-bg:#fdecea;--danger-text:#7a271a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12130d;--card:#1c1d16;--text:#f3f2ec;--muted:#a7a190;--border:#302f24;--accent:#2fbf7a;--tint:#173229;--on-accent:#06231a;--danger-bg:#3a1a17;--danger-text:#ffb4a8;}}
+:root[data-theme="dark"]{--bg:#12130d;--card:#1c1d16;--text:#f3f2ec;--muted:#a7a190;--border:#302f24;--accent:#2fbf7a;--tint:#173229;--on-accent:#06231a;--danger-bg:#3a1a17;--danger-text:#ffb4a8;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;display:flex;justify-content:center;padding:24px 12px;padding-top:calc(24px + env(safe-area-inset-top,0px));padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));}
+.phone{width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:28px;padding:10px;height:fit-content;}
+.app{background:var(--bg);border-radius:20px;padding:16px;min-height:580px;display:flex;flex-direction:column;gap:12px;}
+.screen{display:none;flex-direction:column;gap:12px;flex:1;}
+.screen.active{display:flex;}
+.topbar{display:flex;align-items:center;gap:10px;}
+.brand{font-weight:600;color:var(--accent);}
+.eta{font-size:12px;color:var(--muted);margin-left:auto;}
+.back{background:none;border:none;font-size:18px;color:var(--text);cursor:pointer;padding:0;}
+.title{font-weight:600;font-size:15px;}
+.search{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--muted);font-size:13px;}
+.promo{background:var(--tint);color:var(--accent);border-radius:10px;padding:12px;font-weight:600;font-size:14px;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.cat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 6px;text-align:center;font-size:12px;cursor:pointer;}
+.list{display:flex;flex-direction:column;gap:8px;overflow-y:auto;}
+.prow{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px;}
+.pinfo{flex:1;}
+.pname{font-size:13px;font-weight:600;}
+.pqty{font-size:11px;color:var(--muted);}
+.pprice{font-size:13px;font-weight:600;white-space:nowrap;}
+.was{font-size:10px;color:var(--muted);text-decoration:line-through;margin-right:3px;}
+.add{background:var(--card);border:1px solid var(--accent);color:var(--accent);border-radius:8px;padding:6px 10px;font-size:11px;font-weight:700;cursor:pointer;}
+.stepper{display:flex;align-items:center;gap:8px;}
+.stepper button{width:24px;height:24px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px;cursor:pointer;}
+.cartbar{display:flex;justify-content:space-between;align-items:center;background:var(--accent);color:var(--on-accent);border-radius:10px;padding:12px;font-weight:600;font-size:13px;cursor:pointer;}
+.totalrow{display:flex;justify-content:space-between;font-weight:600;border-top:1px solid var(--border);padding-top:10px;}
+.primary{background:var(--accent);color:var(--on-accent);border:none;border-radius:10px;padding:12px;font-weight:600;font-size:14px;cursor:pointer;}
+.primary:disabled{opacity:.5;cursor:default;}
+.secondary{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:10px;padding:12px;font-weight:600;font-size:13px;cursor:pointer;}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.steps li{font-size:13px;color:var(--muted);padding-left:20px;position:relative;}
+.steps li::before{content:'○';position:absolute;left:0;}
+.steps li.done{color:var(--text);}
+.steps li.done::before{content:'●';color:var(--accent);}
+.steps li.current{color:var(--text);font-weight:600;}
+.steps li.current::before{content:'●';color:var(--accent);}
+.topics{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
+.topics li{padding:10px 0;border-top:1px solid var(--border);font-size:12px;}
+.muted{color:var(--muted);font-size:13px;}
+.nav{display:flex;justify-content:space-around;border-top:1px solid var(--border);padding-top:10px;margin-top:auto;}
+.nav button{background:none;border:none;font-size:12px;color:var(--muted);cursor:pointer;padding:4px 10px;}
+.badge{background:var(--accent);color:var(--on-accent);border-radius:8px;font-size:9px;padding:1px 5px;margin-left:4px;}
+.errbox{background:var(--danger-bg);color:var(--danger-text);border-radius:10px;padding:12px;}
+.demo{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="phone"><div class="app">
+
+  <div id="home" class="screen active">
+    <div class="topbar"><span class="brand">Dashcart</span><span class="eta">10 min delivery</span></div>
+    <div class="search">Search for atta, dal, oil…</div>
+    <div class="promo">Free delivery on your first 10 orders</div>
+    <div class="grid">
+      <div class="cat" onclick="showProducts('fruits')">Fruits &amp; veg</div>
+      <div class="cat" onclick="showProducts('fruits')">Dairy</div>
+      <div class="cat" onclick="showProducts('fruits')">Snacks</div>
+      <div class="cat" onclick="showProducts('fruits')">Personal care</div>
+      <div class="cat" onclick="showProducts('fruits')">Household</div>
+      <div class="cat" onclick="showProducts('fruits')">Pet care</div>
+      <div class="cat" onclick="showProducts('baby')">Baby care</div>
+      <div class="cat" onclick="showProducts('electronics')">Electronics</div>
+      <div class="cat" onclick="showProducts('beauty')">Beauty</div>
+    </div>
+  </div>
+
+  <div id="products" class="screen">
+    <div class="topbar"><button class="back" onclick="showScreen('home')" aria-label="Back">←</button><span class="title" id="productsTitle">Fruits &amp; vegetables</span></div>
+    <div id="productList" class="list"></div>
+    <div id="cartBar" class="cartbar" style="display:none" onclick="showScreen('cart')">
+      <span id="cartBarText"></span><span>View cart →</span>
+    </div>
+  </div>
+
+  <div id="cart" class="screen">
+    <div class="topbar"><button class="back" onclick="showScreen('products')" aria-label="Back">←</button><span class="title">Your cart</span></div>
+    <div id="cartItems" class="list"></div>
+    <div id="cartTotalRow" class="totalrow" style="display:none"><span>Total</span><span id="cartTotalVal"></span></div>
+    <label class="demo"><input type="checkbox" id="simFail">Simulate payment failure (demo)</label>
+    <label class="demo"><input type="checkbox" id="simDelay">Simulate delivery delay (demo)</label>
+    <div id="payError" class="errbox" style="display:none">
+      <div style="font-weight:600;font-size:13px;">Payment couldn't go through</div>
+      <div style="font-size:12px;margin:4px 0 10px;">This looks like a temporary issue on our end, not your card.</div>
+      <div style="display:flex;gap:8px;">
+        <button class="secondary" style="flex:1;padding:8px;font-size:12px;" onclick="retryPayment()">Try again</button>
+        <button class="primary" style="flex:1;padding:8px;font-size:12px;" onclick="useCOD()">Pay with COD</button>
+      </div>
+    </div>
+    <button id="placeOrderBtn" class="primary" onclick="placeOrder()" disabled>Place order</button>
+  </div>
+
+  <div id="tracking" class="screen">
+    <div class="topbar"><button class="back" onclick="showScreen('home')" aria-label="Back">←</button><span class="title">Track order</span></div>
+    <div class="promo" id="etaBox">Arriving in 4 minutes</div>
+    <ul class="steps">
+      <li class="done">Order placed</li>
+      <li class="done">Packed and ready</li>
+      <li class="current">Out for delivery</li>
+      <li>Delivered</li>
+    </ul>
+    <div class="prow"><div class="pinfo"><div class="pname">Rahul</div><div class="pqty">Delivery partner</div></div></div>
+    <div class="totalrow"><span>Order total</span><span id="trackTotal"></span></div>
+    <button class="secondary" onclick="showScreen('support')">Need help?</button>
+  </div>
+
+  <div id="support" class="screen">
+    <div class="topbar"><button class="back" onclick="showScreen('tracking')" aria-label="Back">←</button><span class="title">Help &amp; support</span></div>
+    <button class="primary">Chat with us</button>
+    <button class="secondary">Get a callback · 97XXXXX880</button>
+    <ul class="topics">
+      <li>Where's my order?</li>
+      <li>Payment or refund issue</li>
+      <li>Report an item problem</li>
+      <li>Cancel an order</li>
+    </ul>
+  </div>
+
+  <div class="nav">
+    <button onclick="showScreen('home')">Home</button>
+    <button onclick="showScreen('products')">Browse</button>
+    <button onclick="showScreen('cart')">Cart<span id="cartBadge" class="badge"></span></button>
+  </div>
+
+</div></div>
+
+<script>
+const allProducts=[
+  {id:'ban',cat:'fruits',name:'Bananas',qty:'6 pcs',price:49},
+  {id:'tom',cat:'fruits',name:'Tomatoes',qty:'500 g',price:34,was:40},
+  {id:'oni',cat:'fruits',name:'Onions',qty:'1 kg',price:28},
+  {id:'spi',cat:'fruits',name:'Spinach',qty:'200 g',price:22},
+  {id:'app',cat:'fruits',name:'Apples',qty:'4 pcs',price:120,was:140},
+  {id:'pot',cat:'fruits',name:'Potatoes',qty:'1 kg',price:25},
+  {id:'diaper',cat:'baby',name:'Pampers Diapers (M)',qty:'pack of 44',price:499},
+  {id:'wipes',cat:'baby',name:'Himalaya Baby Wipes',qty:'72 wipes',price:129},
+  {id:'cereal',cat:'baby',name:'Cerelac Baby Cereal',qty:'300 g',price:225},
+  {id:'lotion',cat:'baby',name:"Johnson's Baby Lotion",qty:'200 ml',price:165,was:185},
+  {id:'earph',cat:'electronics',name:'boAt Wired Earphones',qty:'1 unit',price:399,was:499},
+  {id:'cable',cat:'electronics',name:'USB-C Charging Cable',qty:'1 unit',price:249},
+  {id:'bulb',cat:'electronics',name:'Philips LED Bulb 9W',qty:'1 unit',price:149},
+  {id:'power',cat:'electronics',name:'Mi Power Bank 10000mAh',qty:'1 unit',price:999},
+  {id:'facewash',cat:'beauty',name:'Nivea Face Wash',qty:'100 g',price:199},
+  {id:'lipbalm',cat:'beauty',name:'Lakmé Lip Balm',qty:'4.5 g',price:149},
+  {id:'sunscreen',cat:'beauty',name:'Garnier Sunscreen SPF 40',qty:'50 ml',price:249,was:299},
+  {id:'shampoo',cat:'beauty',name:'Dove Shampoo',qty:'340 ml',price:279}
+];
+const catTitles={fruits:'Fruits & vegetables',baby:'Baby care',electronics:'Electronics',beauty:'Beauty'};
+let currentCategory='fruits';
+let cart={};
+let deliveryDelayed=false;
+
+function showProducts(catKey){
+  currentCategory=catKey;
+  document.getElementById('productsTitle').textContent=catTitles[catKey];
+  renderProducts();
+  showScreen('products');
+}
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(id==='cart') renderCart();
+}
+function cartCount(){return Object.values(cart).reduce((a,b)=>a+b,0);}
+function cartTotal(){return Object.entries(cart).reduce((sum,[id,q])=>sum+allProducts.find(p=>p.id===id).price*q,0);}
+function addItem(id){cart[id]=(cart[id]||0)+1;renderProducts();updateCartBar();renderCart();}
+function removeItem(id){if(cart[id]){cart[id]--;if(cart[id]<=0)delete cart[id];}renderProducts();updateCartBar();renderCart();}
+
+function renderProducts(){
+  document.getElementById('productList').innerHTML=allProducts.filter(p=>p.cat===currentCategory).map(p=>{
+    const q=cart[p.id]||0;
+    const priceHtml=p.was?`<span class="was">₹${p.was}</span>₹${p.price}`:`₹${p.price}`;
+    const ctrl=q>0
+      ?`<div class="stepper"><button onclick="removeItem('${p.id}')" aria-label="Remove one">−</button><span>${q}</span><button onclick="addItem('${p.id}')" aria-label="Add one">+</button></div>`
+      :`<button class="add" onclick="addItem('${p.id}')">ADD</button>`;
+    return `<div class="prow"><div class="pinfo"><div class="pname">${p.name}</div><div class="pqty">${p.qty}</div></div><div class="pprice">${priceHtml}</div>${ctrl}</div>`;
+  }).join('');
+}
+function updateCartBar(){
+  const n=cartCount(),t=cartTotal();
+  document.getElementById('cartBadge').textContent=n>0?n:'';
+  const bar=document.getElementById('cartBar');
+  if(n>0){bar.style.display='flex';document.getElementById('cartBarText').textContent=n+' item'+(n>1?'s':'')+' · ₹'+t;}
+  else bar.style.display='none';
+}
+function renderCart(){
+  const el=document.getElementById('cartItems');
+  const entries=Object.entries(cart);
+  const totalRow=document.getElementById('cartTotalRow');
+  const placeBtn=document.getElementById('placeOrderBtn');
+  if(entries.length===0){
+    el.innerHTML='<p class="muted">Your cart is empty.</p>';
+    totalRow.style.display='none';
+    placeBtn.disabled=true;
+    return;
+  }
+  totalRow.style.display='flex';
+  placeBtn.disabled=false;
+  el.innerHTML=entries.map(([id,q])=>{
+    const p=allProducts.find(x=>x.id===id);
+    return `<div class="prow"><div class="pinfo"><div class="pname">${p.name}</div><div class="pqty">${p.qty}</div></div><div class="pprice">₹${p.price*q}</div><div class="stepper"><button onclick="removeItem('${id}')" aria-label="Remove one">−</button><span>${q}</span><button onclick="addItem('${id}')" aria-label="Add one">+</button></div></div>`;
+  }).join('');
+  document.getElementById('cartTotalVal').textContent='₹'+cartTotal();
+}
+function placeOrder(){
+  if(cartCount()===0)return;
+  if(document.getElementById('simFail').checked){
+    document.getElementById('payError').style.display='flex';
+    document.getElementById('payError').style.flexDirection='column';
+    return;
+  }
+  completeOrder();
+}
+function retryPayment(){completeOrder();}
+function useCOD(){completeOrder();}
+function completeOrder(){
+  deliveryDelayed=document.getElementById('simDelay').checked;
+  document.getElementById('trackTotal').textContent=cartCount()+' items · ₹'+cartTotal();
+  cart={};
+  updateCartBar();
+  document.getElementById('payError').style.display='none';
+  document.getElementById('simFail').checked=false;
+  renderTrackingEta();
+  showScreen('tracking');
+}
+function renderTrackingEta(){
+  const box=document.getElementById('etaBox');
+  if(deliveryDelayed){
+    box.innerHTML='<div>Running a little behind</div><div style="font-weight:400;font-size:11px;margin-top:2px;">Arriving by 2:45 PM \u2013 finding you the nearest available rider</div>';
+  }else{
+    box.textContent='Arriving in 4 minutes';
+  }
+}
+
+renderProducts();
+updateCartBar();
+</script>
+</body>
+</html>
