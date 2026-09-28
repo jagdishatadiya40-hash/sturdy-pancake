@@ -1,0 +1,30 @@
+{
+  "id": "/sturdy-pancake/",
+  "name": "Dashcart",
+  "short_name": "Dashcart",
+  "description": "Fast grocery, household, electronics and beauty delivery.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en",
+  "categories": [
+    "shopping"
+  ],
+  "background_color": "#f8c630",
+  "theme_color": "#f8c630",
+  "icons": [
+    {
+      "src": "https://jagdishatadiya40-hash.github.io/sturdy-pancake/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://jagdishatadiya40-hash.github.io/sturdy-pancake/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
